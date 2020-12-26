@@ -126,7 +126,7 @@
       "name": "[variables('storageAccountName')]",
       "location": "[variables('location')]",
       "sku": {
-        "name": "Standard_RAGRS"
+        "name": "Standard_LRS"
       },
       "kind": "StorageV2",
       "properties": {
@@ -155,9 +155,9 @@
       ],
       "properties": {
         "sku": {
-          "name": "Premium",
-          "family": "P",
-          "capacity": 1
+          "name": "Basic",
+          "family": "C",
+          "capacity": 0
         },
         "subnetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets/', variables('vnetName'), variables('redisCacheSubnetName'))]",
         "staticIP": "[variables('redisCacheStaticIP')]",
@@ -179,8 +179,8 @@
         "hostingEnvironment": "[parameters('existingAseName')]"
       },
       "sku": {
-        "tier": "Isolated",
-        "name": "I1"
+        "tier": "Free",
+        "name": "F1"
       }
     },
     {
@@ -493,9 +493,9 @@
       ],
       "properties": {
         "sku": {
-          "name": "WAF_Medium",
-          "tier": "WAF",
-          "capacity": "1"
+          "name": "Standard_Small",
+          "tier": "Standard",
+          "capacity": "0"
         },
         "gatewayIPConfigurations": [
           {

@@ -3,31 +3,31 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "existingASEName": {
-      "value": "GET-PREREQ-existingASEName"
+      "value": "amyhuangeshop"
     },
     "existingASELocation": {
-      "value": "GET-PREREQ-existingASELocation"
+      "value": "centralus"
     },
     "existingASEDNSSuffix": {
-      "value": "internal-contoso.com"
+      "value": "amyhuangeshop-internal.tk"
     },
     "dnsSuffix": {
-      "value": "contoso.com"
+      "value": "amyhuangeshop.tk"
     },
     "sqlServerAdministratorLogin": {
-      "value": "GEN-UNIQUE"
+      "value": "amyhuangamyhuang"
     },
     "sqlServerAdministratorLoginPassword": {
-      "value": "GEN-PASSWORD"
+      "value": "ThisIsASqlPassword123!!!"
     },
     "azureAdTenantId": {
-      "value": "GEN-UNIQUE"
+      "value": "86081efb-e769-4df1-80d3-70317e9b7454"
     },
     "azureAdClientId": {
-      "value": "GEN-UNIQUE"
+      "value": "df7e06ad-1fc6-45e1-b84d-57a23184728b"
     },
     "appInsightsLocation": {
-      "value": "East US"
+      "value": "centralus"
     }
   }
 }

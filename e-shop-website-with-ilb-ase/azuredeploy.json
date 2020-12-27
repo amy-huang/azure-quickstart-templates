@@ -484,7 +484,7 @@
         "sku": {
           "name": "Standard_Small",
           "tier": "Standard",
-          "capacity": "0"
+          "capacity": 1
         },
         "gatewayIPConfigurations": [
           {
@@ -711,34 +711,7 @@
               "pickHostNameFromBackendHttpSettings": false
             }
           }
-        ],
-        "webApplicationFirewallConfiguration": {
-          "enabled": true,
-          "firewallMode": "Prevention",
-          "ruleSetType": "OWASP",
-          "ruleSetVersion": "3.0",
-          "disabledRuleGroups": [
-            {
-              "ruleGroupName": "REQUEST-920-PROTOCOL-ENFORCEMENT",
-              "rules": [
-                920350
-              ]
-            },
-            {
-              "ruleGroupName": "REQUEST-931-APPLICATION-ATTACK-RFI",
-              "rules": [
-                931130
-              ]
-            },
-            {
-              "ruleGroupName": "REQUEST-942-APPLICATION-ATTACK-SQLI",
-              "rules": [
-                942130,
-                942440
-              ]
-            }
-          ]
-        }
+        ]
       }
     },
     {

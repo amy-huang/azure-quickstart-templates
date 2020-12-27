@@ -468,17 +468,6 @@
             "edition": "Basic",
             "zoneRedundant": false
           }
-        },
-        {
-          "apiVersion": "2020-02-02-preview",
-          "type": "virtualNetworkRules",
-          "name": "[concat('allow-access-from-', variables('aseSubnetName'))]",
-          "dependsOn": [
-            "[resourceId('Microsoft.Sql/servers/', variables('sqlServerName'))]"
-          ],
-          "properties": {
-            "virtualNetworkSubnetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets/', variables('vnetName'), variables('aseSubnetName'))]"
-          }
         }
       ]
     },

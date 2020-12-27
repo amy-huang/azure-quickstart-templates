@@ -9,10 +9,10 @@
       "value": "centralus"
     },
     "existingASEDNSSuffix": {
-      "value": "amyhuangeshop-internal.tk"
+      "value": "amyhuangeshop-internal.ml"
     },
     "dnsSuffix": {
-      "value": "amyhuangeshop.tk"
+      "value": "amyhuangeshop.ml"
     },
     "sqlServerAdministratorLogin": {
       "value": "amyhuangamyhuang"

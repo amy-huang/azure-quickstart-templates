@@ -1,0 +1,1 @@
+az deployment group create --resource-group amyhuangeshoprg --template-file azuredeploy.json --parameters azuredeploy.parameters.json

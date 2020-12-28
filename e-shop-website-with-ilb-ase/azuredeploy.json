@@ -82,12 +82,12 @@
       "cdnWebAppEndpointName": "[concat(parameters('existingAseName'), '-cdn-web')]",
       "cdnStorageEndpointName": "[concat(parameters('existingAseName'), '-cdn-storage')]",
       "webAppExternalHostName": "[concat(variables('webAppName'), '.', parameters('dnsSuffix'))]",
-      "webAppInternalHostName": "[concat(variables('webAppName'), '.', concat('web-', parameters('existingASEDNSSuffix')))]",
-      "apiAppInternalHostName": "[concat(variables('apiAppName'), '.', concat('api-', parameters('existingASEDNSSuffix')))]",
+      "webAppInternalHostName": "[concat(variables('webAppName'), '.', parameters('existingASEDNSSuffix'))]",
+      "apiAppInternalHostName": "[concat(variables('apiAppName'), '.', parameters('existingASEDNSSuffix'))]",
       "contentAppExternalHostName": "[concat(variables('contentAppName'), '.', parameters('dnsSuffix'))]",
-      "contentAppInternalHostName": "[concat(variables('contentAppName'), '.', concat('content-', parameters('existingASEDNSSuffix')))]",
+      "contentAppInternalHostName": "[concat(variables('contentAppName'), '.', parameters('existingASEDNSSuffix'))]",
       "adminAppExternalHostName": "[concat(variables('adminAppName'), '.', parameters('dnsSuffix'))]",
-      "adminAppInternalHostName": "[concat(variables('adminAppName'), '.', concat('admin-', parameters('existingASEDNSSuffix')))]",
+      "adminAppInternalHostName": "[concat(variables('adminAppName'), '.', parameters('existingASEDNSSuffix'))]",
       "sourceCodeRepositoryURL": "https://github.com/OGCanviz/e-shop-website-with-ilb-ase"
     },
     "resources": [
@@ -159,8 +159,6 @@
             "family": "C",
             "capacity": 0
           },
-          "subnetId": "[resourceId('Microsoft.Network/virtualNetworks/subnets/', variables('vnetName'), variables('redisCacheSubnetName'))]",
-          "staticIP": "[variables('redisCacheStaticIP')]",
           "enableNonSslPort": true
         }
       },
@@ -175,7 +173,7 @@
           "workerSize": "0",
           "workerSizeId": "0",
           "numberOfWorkers": "1",
-          "reserved": false,
+          "reserved": false
         },
         "sku": {
           "tier": "Free",
@@ -194,7 +192,7 @@
           "name": "[variables('contentAppName')]",
           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', variables('aspName'))]",
           "siteConfig": {
-            "alwaysOn": true,
+            "alwaysOn": false,
             "appSettings": [
               {
                 "name": "project",
@@ -232,7 +230,7 @@
           "name": "[variables('apiAppName')]",
           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', variables('aspName'))]",
           "siteConfig": {
-            "alwaysOn": true,
+            "alwaysOn": false,
             "appSettings": [
               {
                 "name": "ApplicationInsights:InstrumentationKey",
@@ -281,7 +279,7 @@
           "name": "[variables('adminAppName')]",
           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', variables('aspName'))]",
           "siteConfig": {
-            "alwaysOn": true,
+            "alwaysOn": false,
             "appSettings": [
               {
                 "name": "AzureAd:Domain",
@@ -342,7 +340,7 @@
           "name": "[variables('webAppName')]",
           "serverFarmId": "[resourceId('Microsoft.Web/serverfarms/', variables('aspName'))]",
           "siteConfig": {
-            "alwaysOn": true,
+            "alwaysOn": false,
             "appSettings": [
               {
                 "name": "ODataServiceBaseUrl",

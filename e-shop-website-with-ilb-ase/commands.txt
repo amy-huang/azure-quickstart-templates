@@ -1,1 +1,14 @@
+az deployment sub create --name amyhuangeshoprg --location centralus --template-file pre-deploy.json --parameters  pre-deploy.parameters.json
+
 az deployment group create --resource-group amyhuangeshoprg --template-file azuredeploy.json --parameters azuredeploy.parameters.json
+
+az sql db list-editions -l centralus -o table
+
+powershell
+Connect-AzAccount
+Get-AzApplicationGateway -Name "amyhuangeshop-waf" -ResourceGroupName "amyhuangeshoprg"
+$ag = Get-AzApplicationGateway -Name "amyhuangeshop-waf" -ResourceGroupName "amyhuangeshoprg"
+Stop-AzApplicationGateway -ApplicationGateway $ag
+Start-AzApplicationGateway -ApplicationGateway $ag
+
+        
